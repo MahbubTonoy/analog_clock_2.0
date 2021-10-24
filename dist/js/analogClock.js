@@ -41,7 +41,7 @@ analogClock.appendChild(clockHandContainer);
 // adding hour hand
 
 const clockHourHandWrapper = document.createElement("DIV");
-clockHourHandWrapper.setAttribute("class", "analog_clock_hour_hand_wrapper");
+clockHourHandWrapper.setAttribute("class", "analog_clock_hour_wrapper analog_clock_wrapper");
 clockHandContainer.appendChild(clockHourHandWrapper);
 
 
@@ -53,7 +53,7 @@ clockHourHandWrapper.appendChild(clockHourHand);
 
 // adding minute hand
 const clockMinHandWrapper = document.createElement("DIV");
-clockMinHandWrapper.setAttribute("class", "analog_clock_min_wrapper");
+clockMinHandWrapper.setAttribute("class", "analog_clock_min_wrapper analog_clock_wrapper");
 clockHandContainer.appendChild(clockMinHandWrapper);
 
 const clockMinuteHand = document.createElement("DIV");
@@ -63,7 +63,7 @@ clockMinHandWrapper.appendChild(clockMinuteHand);
 
 // adding second hand
 const clockSecHandWrapper = document.createElement("DIV");
-clockSecHandWrapper.setAttribute("class", "analog_clock_sec_wrapper");
+clockSecHandWrapper.setAttribute("class", "analog_clock_sec_wrapper analog_clock_wrapper");
 clockHandContainer.appendChild(clockSecHandWrapper);
 
 const clockSecondHand = document.createElement("DIV");
@@ -82,3 +82,18 @@ clockHandContainer.appendChild(handCap);
 
 
 
+//time setting
+const currentTime = new Date();
+let analog_clock_seconds = currentTime.getSeconds();
+let analog_clock_minutes = currentTime.getMinutes();
+let analog_clock_hours = currentTime.getHours();
+
+document.querySelector(".analog_clock_sec_wrapper").style.transform = `rotate(${6*analog_clock_seconds}deg)`;
+
+document.querySelector(".analog_clock_min_wrapper").style.transform = `rotate(${
+ (6*analog_clock_minutes) + (analog_clock_seconds/10)
+}deg)`;
+
+document.querySelector(".analog_clock_hour_wrapper").style.transform = `rotate(${
+ (analog_clock_hours*30)+ (analog_clock_minutes/2) + (analog_clock_seconds/10)
+}deg)`;

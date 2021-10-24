@@ -2,13 +2,16 @@
   width: 95%;
   max-width: 350px;
   position: relative;
-  background: #99c7e5;
+  /* background: #99c7e5; */
+  background: #fff;
   display: inline-block;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 10px solid #3498db;
+  box-shadow: 5px 5px 5px rgba(64, 64, 64, 0.4),
+              inset 5px 5px 5px rgba(64, 64, 64, 0.4);
 }
 .analog_clock,
 .analog_clock > * {
@@ -29,14 +32,15 @@
   left: 0;
 }
 .analog_clock_number::after {
+  box-shadow: 2px 2px 1px rgba(64, 64, 64, 0.4);
   content: "";
   position: absolute;
   top: 3%;
   left: 50%;
   width: 2%;
   height: 5%;
-  background: #606060;
-  opacity: 0.5;
+  background: #000;
+  /* opacity: 0.5; */
   border-radius: 0 0 3px 3px;
   transform: translate(-50%, 0%);
 }
@@ -45,9 +49,6 @@
 }
 .analog_clock_hand_container {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 .analog_clock_hand {
   position: relative;
@@ -70,8 +71,9 @@
 .analog_clock_hand::after {
   content: '';
   position: absolute;
-  left: 0;
-  transform: translate(-50%, 0);
+  left: 50%;
+  transform: translate(-50%, 0%);
+  box-shadow: 3px 3px 5px rgba(64, 64, 64, 0.4);
 }
 
 .analog_clock_hand::after {
@@ -119,7 +121,7 @@
 
 /* minute hand build  */
 .analog_clock_minute_hand::after  {
-  height: 100px;
+  height: 120px;
   width: 5px;
 }
 .analog_clock_minute_hand::before  {
@@ -132,7 +134,8 @@
 
 /* second hand build  */
 .analog_clock_second_hand::after  {
-  height: 120px;
+  /* height: 150px; */
+  padding-top: 150px;
   width: 3px;
 }
 .analog_clock_second_hand::before  {
@@ -171,8 +174,8 @@
 /* hand cap */
 .analog_clock_hand_cap {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   height: 12px;
   width: 12px;
