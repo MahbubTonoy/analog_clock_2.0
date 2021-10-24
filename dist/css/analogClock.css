@@ -36,7 +36,7 @@
   width: 2%;
   height: 5%;
   background: #606060;
-  opacity: 0.2;
+  opacity: 0.5;
   border-radius: 0 0 3px 3px;
   transform: translate(-50%, 0%);
 }
@@ -52,28 +52,131 @@
 .analog_clock_hand {
   position: relative;
 }
-.analog_clock_hour_hand::after  {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.analog_clock_hand::before,
+.analog_clock_hand::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
-  height: 80px;
-  width: 8px;
-  background: #9e3333;
   transform: translate(-50%, 0);
+}
+
+.analog_clock_hand::after {
+  bottom: 0;
   border-top-left-radius: 10px 100px ;
   border-top-right-radius: 10px 100px ;
   border-bottom-left-radius: 5px 100px;
   border-bottom-right-radius: 5px 100px;
+
+}
+
+.analog_clock_hand::before {
+  top: 0;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* hand color */
+.analog_clock_hour_hand::after,
+.analog_clock_hour_hand::before,
+.analog_clock_minute_hand::after,
+.analog_clock_minute_hand::before {
+  background: #470f0f;
+}
+.analog_clock_second_hand::after,
+.analog_clock_second_hand::before {
+  background: #9e2b2b;
+}
+
+
+/* hour hand build  */
+.analog_clock_hour_hand::after  {
+  height: 80px;
+  width: 8px;
 }
 .analog_clock_hour_hand::before  {
-  content: '';
+  height: 20px;
+  width: 11px;
+}
+
+
+
+/* minute hand build  */
+.analog_clock_minute_hand::after  {
+  height: 100px;
+  width: 5px;
+}
+.analog_clock_minute_hand::before  {
+  height: 25px;
+  width: 9px;
+}
+
+
+
+
+/* second hand build  */
+.analog_clock_second_hand::after  {
+  height: 120px;
+  width: 3px;
+}
+.analog_clock_second_hand::before  {
+  height: 40px;
+  width: 5px;
+}
+
+
+
+
+/* hand rotation */
+.analog_clock_hour_hand {
+  animation: rotate 43200s linear infinite;
+}
+.analog_clock_minute_hand {
+  animation: rotate 3600s linear infinite;
+}
+.analog_clock_second_hand {
+  animation: rotate 60s linear infinite;
+}
+
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* hand cap */
+.analog_clock_hand_cap {
   position: absolute;
   left: 0;
   top: 0;
-  height: 20px;
-  width: 11px;
-  background: #9e3333;
-  transform: translate(-50%, 0);
-  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: 3px solid #470f0f;
+  background: #9e2b2b;
 }

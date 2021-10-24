@@ -35,24 +35,46 @@ const clockHandContainer = document.createElement("DIV");
 clockHandContainer.setAttribute("class", "analog_clock_hand_container");
 analogClock.appendChild(clockHandContainer);
 
+
+
+
 // adding hour hand
+
+const clockHourHandWrapper = document.createElement("DIV");
+clockHourHandWrapper.setAttribute("class", "analog_clock_hour_hand_wrapper");
+clockHandContainer.appendChild(clockHourHandWrapper);
+
 
 const clockHourHand = document.createElement("DIV");
 clockHourHand.setAttribute("class", "analog_clock_hand analog_clock_hour_hand");
-clockHandContainer.appendChild(clockHourHand);
+clockHourHandWrapper.appendChild(clockHourHand);
+
+
 
 // adding minute hand
+const clockMinHandWrapper = document.createElement("DIV");
+clockMinHandWrapper.setAttribute("class", "analog_clock_min_wrapper");
+clockHandContainer.appendChild(clockMinHandWrapper);
 
 const clockMinuteHand = document.createElement("DIV");
 clockMinuteHand.setAttribute("class", "analog_clock_hand analog_clock_minute_hand");
-clockHandContainer.appendChild(clockMinuteHand);
+clockMinHandWrapper.appendChild(clockMinuteHand);
 
 
 // adding second hand
+const clockSecHandWrapper = document.createElement("DIV");
+clockSecHandWrapper.setAttribute("class", "analog_clock_sec_wrapper");
+clockHandContainer.appendChild(clockSecHandWrapper);
 
 const clockSecondHand = document.createElement("DIV");
 clockSecondHand.setAttribute("class", "analog_clock_hand analog_clock_second_hand");
-clockHandContainer.appendChild(clockSecondHand);
+clockSecHandWrapper.appendChild(clockSecondHand);
+
+// adding hand cap
+
+const handCap = document.createElement("DIV");
+handCap.setAttribute("class", "analog_clock_hand_cap");
+clockHandContainer.appendChild(handCap);
 
 
 
