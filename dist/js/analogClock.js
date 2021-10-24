@@ -37,8 +37,22 @@ analogClock.appendChild(clockHandContainer);
 
 // adding hour hand
 
+const clockHourHand = document.createElement("DIV");
+clockHourHand.setAttribute("class", "analog_clock_hand analog_clock_hour_hand");
+clockHandContainer.appendChild(clockHourHand);
+
+// adding minute hand
+
+const clockMinuteHand = document.createElement("DIV");
+clockMinuteHand.setAttribute("class", "analog_clock_hand analog_clock_minute_hand");
+clockHandContainer.appendChild(clockMinuteHand);
 
 
+// adding second hand
+
+const clockSecondHand = document.createElement("DIV");
+clockSecondHand.setAttribute("class", "analog_clock_hand analog_clock_second_hand");
+clockHandContainer.appendChild(clockSecondHand);
 
 
 
